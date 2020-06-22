@@ -1,14 +1,17 @@
 #!/bin/bash 
-# This script will log the temperature of your Raspberry Pi 4 every 
-# second until you stop it with Ctrl+c. The log will be created in
-# the directory /home/pi/logs. Temperature will also be printed on 
+# This script write to file the temperature of your Raspberry Pi once every 
+# second until you stop it with Ctrl+c. Temperature will also be printed on
 # screen.
-# Example: /home/pi/logs/temp-06-36-47-AM--21-Jun-2020.txt
+# Example log: Temp-06-36-47-AM--21-Jun-2020.txt. Created in the current 
+# working directory.
+# Author: Bassam Husain; https://github.com/bassamanator/raspberrypi-scripts
 
-fn=$HOME/logs/Temp-`date +%I-%M-%S-%p--%d-%b-%Y`.txt
-echo $fn
+fn=Temp-`date +%I-%M-%S-%p--%d-%b-%Y`.txt
+echo Filename: $fn
+echo "Temperature °C" | tee -a $fn
 while true 
  do
-     cat /sys/class/thermal/thermal_zone0/temp 2>&1 | tee -a $fn
+	cpu=$(cat /sys/class/thermal/thermal_zone0/temp)
+	echo $(($cpu / 1000)) | tee -a $fn
      sleep 1
  done
