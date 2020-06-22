@@ -4,7 +4,8 @@
 # screen.
 # Example log: Temp-06-36-47-AM--21-Jun-2020.txt. Created in the current 
 # working directory.
-# Author: Bassam Husain; https://github.com/bassamanator/raspberrypi-scripts
+# Author: Bassam Husain; bassamanator
+# https://github.com/bassamanator/raspberrypi-scripts
 
 fn=Temp-`date +%I-%M-%S-%p--%d-%b-%Y`.txt
 echo Filename: $fn
