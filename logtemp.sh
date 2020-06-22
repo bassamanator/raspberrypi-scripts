@@ -9,7 +9,7 @@
 
 fn=Temp-`date +%I-%M-%S-%p--%d-%b-%Y`.txt
 echo Filename: $fn
-echo "Temperature °C" | tee -a $fn
+echo "Temperature (°C)" | tee -a $fn
 while true 
  do
 	cpu=$(cat /sys/class/thermal/thermal_zone0/temp)
