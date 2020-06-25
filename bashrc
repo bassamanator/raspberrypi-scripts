@@ -19,3 +19,5 @@ alias getip="curl https://ipinfo.io/ip"
 # Goes up a directory in your shell.
 alias up="cd .."
 
+# Show current bootloader version.
+alias btlv="vcgencmd bootloader_version"
