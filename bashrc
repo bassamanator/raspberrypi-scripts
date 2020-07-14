@@ -21,3 +21,7 @@ alias up="cd .."
 
 # Show current bootloader version.
 alias btlv="vcgencmd bootloader_version"
+
+# A short from of 'ls -la'
+alias l="ls -la"
+
